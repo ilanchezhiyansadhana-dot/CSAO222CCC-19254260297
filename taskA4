@@ -1,1 +1,40 @@
 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *p = NULL;
+    int size = 0, capacity = 0;
+
+    for (int i = 1; i <= 5; i++)
+    {
+        if (size == capacity)
+        {
+            int newCapacity = (capacity == 0) ? 2 : capacity * 2;
+
+            int *temp = realloc(p, newCapacity * sizeof(int));
+
+            if (temp == NULL)
+            {
+                free(p);
+                printf("Memory allocation failed\n");
+                return 1;
+            }
+
+            p = temp;
+            capacity = newCapacity;
+        }
+
+        p[size] = i * 10;
+        size++;
+
+        printf("Value = %d, Size = %d, Capacity = %d\n",
+               p[size - 1], size, capacity);
+    }
+
+    free(p);
+
+    return 0;
+}
+
