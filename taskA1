@@ -1,1 +1,33 @@
 
+#include <stdio.h>
+
+void registerDonor()
+{
+    printf("Donor registered successfully\n");
+}
+
+void checkEligibility()
+{
+    printf("Donor is eligible\n");
+}
+
+void findDonor()
+{
+    printf("Donor found successfully\n");
+}
+
+void updateStock()
+{
+    printf("Stock updated successfully\n");
+}
+
+int main()
+{
+    registerDonor();
+    checkEligibility();
+    findDonor();
+    updateStock();
+
+    return 0;
+}
+
